@@ -1,0 +1,31 @@
+using System;
+
+class Program
+{
+    static void Main()
+    {
+        string[] input = { "1234", "1567", "2", ":-)", "cat", "dog", "hi" };
+        int count = 0;
+
+        // Подсчёт количества строк длиной ≤ 3
+        foreach (var s in input)
+        {
+            if (s.Length <= 3) count++;
+        }
+
+        // Создание нового массива нужного размера
+        string[] result = new string[count];
+        int index = 0;
+        foreach (var s in input)
+        {
+            if (s.Length <= 3)
+            {
+                result[index] = s;
+                index++;
+            }
+        }
+
+        // Вывод результата
+        Console.WriteLine("Новый массив: [" + string.Join(", ", result) + "]");
+    }
+}
